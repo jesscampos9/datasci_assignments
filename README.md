@@ -3,7 +3,7 @@ datasci\_assignments
 
 Programming assignments for Data Science for Linguistics.
 
--   [pa1](#assignment-pa1)
+-   [pa1](#assignment-1)
 
 ------------------------------------------------------------------------
 
