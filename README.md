@@ -39,24 +39,27 @@ merge your contribution with the master repo (the professor's copy).
         -   A goal you have for this class
 
 3.  Create another folder. Name it `summaries` and place it inside your
-    personal dropbox folder. Next, read Chapter 1 of R4DS. Create a file
-    called **rfds\_ch1\_summary.md** and write a 4 sentence summary
-    about the chapter. Save this file in `summaries` inside your
+    personal dropbox folder. Next, read [Wickham, 2015][w2015. Create a
+    file called **wickham\_2015\_summary.md** and write a 4 sentence
+    summary about the article. Save this file in `summaries` inside your
     personal dropbox (the lastname\_firstname folder you just made).
-4.  Read QML Ch. 1 and 2 (pp. 1-57). Do the R examples included in the
-    text as you read (nothing to turn in).
-5.  Commit the changes to your upstream branch. Check your repo on
-    GitHun to make sure it worked, and then submit a pull-request. It
+4.  Read [R4DS](http://r4ds.had.co.nz/index.html) Preface - Ch. 2 (p.
+    ix-41). Do all examples included in the text as you read (nothing to
+    turn in).
+5.  Read QML Ch. 1 (pp. 1-33). Do the R examples included in the text as
+    you read (nothing to turn in).
+6.  Commit the changes to your upstream branch. Check your repo on
+    GitHub to make sure it worked, and then submit a pull-request. It
     should include the following...
     1.  your dropbox folder (lastname\_firstname)
     2.  a README.md file
     3.  a summaries folder (inside your dropbox)
-    4.  your R4DS ch. 1 summary (r4ds\_ch1\_summary.md)
+    4.  your Wickham (2015) summary (wickham\_2015\_summary.md)
 
 ### Evaluation
 
-This is programming assignment 1 of 4. It is worth 10 of the 50 possible
-points. In order to receive full credit you must complete steps 1-5
+This is programming assignment 1 of 4. It is worth 10 of the 40 possible
+points. In order to receive full credit you must complete steps 1-6
 above and follow all the instructions.
 
 <table>
@@ -80,7 +83,7 @@ above and follow all the instructions.
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td align="left">Include a R4DS Ch. 1 summary</td>
+<td align="left">Include a summary of Wickham (2015)</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
@@ -109,7 +112,7 @@ This is how the file structure currently looks:
                    └── firstname_lastname
                        ├── README.md
                        └── summaries
-                           └── r4ds_ch1_summary.md
+                           └── wickham_2015_summary.md
 
 Take a look inside the `lastname_firstname` folder if you need an
 example. Your personal dropbox should look exactly the same, but with
@@ -121,8 +124,10 @@ your name):
             │
             ├── README.md
             └── summaries
-                └── r4ds_ch1_summary.md
+                └── wickham_2015_summary.md
 
 Remember to check the [GitHub setup
 tutorial](http://www.jvcasillas.com/ru_teaching/ru_spanish_589/589_01_s2018/sources/tuts/github_setup/index.html)
 if you need help pushing your changes and submitting a pull request.
+
+------------------------------------------------------------------------
