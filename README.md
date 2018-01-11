@@ -39,10 +39,12 @@ merge your contribution with the master repo (the professor's copy).
         -   A goal you have for this class
 
 3.  Create another folder. Name it `summaries` and place it inside your
-    personal dropbox folder. Next, read [Wickham, 2015][w2015. Create a
-    file called **wickham\_2015\_summary.md** and write a 4 sentence
-    summary about the article. Save this file in `summaries` inside your
-    personal dropbox (the lastname\_firstname folder you just made).
+    personal dropbox folder. Next, read [Wickham,
+    2015](https://nhorton.people.amherst.edu/mererenovation/17_Wickham.PDF).
+    Create a file called **wickham\_2015\_summary.md** and write a 4
+    sentence summary about the article. Save this file in `summaries`
+    inside your personal dropbox (the lastname\_firstname folder you
+    just made).
 4.  Read [R4DS](http://r4ds.had.co.nz/index.html) Preface - Ch. 2 (p.
     ix-41). Do all examples included in the text as you read (nothing to
     turn in).
