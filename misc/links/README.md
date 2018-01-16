@@ -5,5 +5,6 @@ Useful links
 - [GitHub](www.github.com)
 - [Rutgers](www.rutgers.edu)
 - [my awesome link](http://rci.rutgers.edu/~erb102/)
+- [Reddit](www.reddit.com)
+- [DataSci](http://www.jvcasillas.com/ru_teaching/ru_spanish_589/589_01_s2018/)
 - [Sakai](https://sakai.rutgers.edu/portal)
-
