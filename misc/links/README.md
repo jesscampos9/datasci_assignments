@@ -4,6 +4,7 @@ Useful links
 - [StackOverflow](www.stackoverflow.com)
 - [GitHub](www.github.com)
 - [Rutgers](www.rutgers.edu)
+- [Personal web](crislozano.weebly.com)
 - [My awesome link](coakden.github.io)
 - [Hello! English](www.helloenglishmadrid.com)
 - [my awesome link](http://rci.rutgers.edu/~erb102/)
