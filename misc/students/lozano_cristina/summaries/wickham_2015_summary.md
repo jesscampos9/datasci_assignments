@@ -1,0 +1,3 @@
+
+
+Wickham takes an interesting new approach to how statistics should be taught, based on the reality that not everybody that uses stats is a professional statistitian. In order to do so, he proposes developing easy grammars (in his case in the shape of R packages) that will help anybody manipulate data to solve the most common problems. While these grammars, can help us solve 90% of data problems, he emphasizes that students should be taught how to program, which will enable them to solve the other 10%. 
