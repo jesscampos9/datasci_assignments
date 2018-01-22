@@ -4,6 +4,7 @@ Useful links
 - [StackOverflow](www.stackoverflow.com)
 - [GitHub](www.github.com)
 - [Rutgers](www.rutgers.edu)
+- [Google](www.google.com)
 - [this is a link](www.github.com)
 - [Personal web](crislozano.weebly.com)
 - [My awesome link](coakden.github.io)
