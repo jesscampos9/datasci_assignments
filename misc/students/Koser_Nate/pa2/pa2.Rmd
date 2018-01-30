@@ -3,7 +3,7 @@ title: "Programming assignment 2"
 author: "Nate Koser"
 date: "Last update: 2018-01-29 18:20:58"
 output: 
-html_document:
+  html_document:
     highlight: kate
     keep_md: yes
     theme: united
