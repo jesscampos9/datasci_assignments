@@ -5,6 +5,10 @@ Useful links
 - [GitHub](www.github.com)
 - [Rutgers](www.rutgers.edu)
 - [My awesome link](www.nate.co.kr)
+<<<<<<< HEAD
+
+
+=======
 - [Google](www.google.com)
 - [this is a link](www.github.com)
 - [Personal web](crislozano.weebly.com)
@@ -15,3 +19,4 @@ Useful links
 - [DataSci](http://www.jvcasillas.com/ru_teaching/ru_spanish_589/589_01_s2018/)
 - [Sakai](https://sakai.rutgers.edu/portal)
 - [My Personal Website](https://dinemamadou.wixsite.com/dinemamadou)
+>>>>>>> 565f61a7572e60e93ce285dfb90cd6530b22ad6b
