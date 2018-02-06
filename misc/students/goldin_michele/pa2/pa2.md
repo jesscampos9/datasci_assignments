@@ -36,16 +36,16 @@ library(tidyverse)
 
 ```r
 beginningReaders %>%
-  select(., ReadingScore, LogRT) %>%
-  ggplot(., aes(x = LogRT, y = ReadingScore)) +
+  select(., LogFrequency, Word) %>%
+  ggplot(., aes(x = as.factor(Word), y = LogFrequency)) +
   geom_point()+
-  labs(x="Reading Times", y = "Reading Scores", title = "My Beginning Readers Scatterplot")
+  labs(x="Word", y = "Log Frequency", title = "My Beginning Readers Scatterplot")
 ```
 
 ![](pa2_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 ```r
-caption = "My Scatterplot"
+caption = "Log Frequency as a function of Word"
 ```
 
 ##Plot2
@@ -53,13 +53,9 @@ caption = "My Scatterplot"
 
 ```r
 english %>%
-  ggplot(., aes(x = VerbFrequency, y = Frication, color = VerbFrequency)) +
+  ggplot(., aes(x = as.factor(AgeSubject), y = as.factor(Frication), color = VerbFrequency)) +
   geom_boxplot() +
-  labs(x="Verb Frequency", y = "Frication", title = "My English Boxplot")
-```
-
-```
-## Warning: position_dodge requires non-overlapping x intervals
+  labs(x="Age", y = "Frication", title = "My English Boxplot")
 ```
 
 ![](pa2_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -73,19 +69,15 @@ caption = "My Boxplot"
 
 
 ```r
-spanishFunctionWords %>%
-ggplot(., aes(x = as.factor(X14458gll), y = X14463gll)) +
+danish %>%
+ggplot(., aes(x = as.factor(Subject), y = LogRT)) +
   stat_summary(fun.data = mean_cl_boot, geom = 'pointrange') + 
-  facet_grid(X14459gll~X14464gll) +
-  labs(x="X14458gll", y = "X14463gll", title = "My Spanish Function Words Plot")
-```
-
-```
-## Warning: Removed 75 rows containing missing values (geom_pointrange).
+  facet_grid(. ~ Sex) +
+  labs(x="Participants", y = "Reading Times", title = "My Danish Plot")
 ```
 
 ![](pa2_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
-caption = "My Plot"
+caption = "Reading Times distributed by Sex"
 ```
