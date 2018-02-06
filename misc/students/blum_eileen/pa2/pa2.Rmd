@@ -1,0 +1,55 @@
+---
+title: "Programming assignment 2"
+author: "Eileen Blum"
+date: "Last update: 2018-02-05 19:18"
+output: 
+  html_document: 
+    highlight: kate
+    keep_md: yes
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r echo = FALSE, warning = FALSE}
+library(languageR)
+library(tidyverse)
+```
+
+
+#Bivariate scatterplot
+```{r}
+summary(english)
+str(english)
+
+english %>%
+  ggplot(., aes(x = WrittenFrequency, y = NumberComplexSynsets)) +
+    geom_point() + 
+    labs(x = "Written Frequency", y = "Number Complex Synsets", title = "Eileen's English Scatterplot")
+```
+
+#Boxplot with different colors
+```{r}
+summary(dativeSimplified)
+str(dativeSimplified)
+
+dativeSimplified %>% 
+  ggplot(., aes(x = AnimacyOfTheme, y = LengthOfTheme, color = RealizationOfRec)) + 
+    geom_boxplot() + 
+    labs(x = "Animacy of Theme", y = "Length of Theme", color = "Realization of Rec", title = "Eileen's Dative Boxplot")
+```
+
+#Plot of your choice including stat_summary and a facet
+```{r}
+summary(danish)
+str(danish)
+
+danish %>% 
+  ggplot(., aes(x = as.factor(Affix), y = PC2)) + 
+    stat_summary(fun.y = mean, geom = "point") + 
+   facet_grid(Sex ~ .) +
+   labs(x = "Affix", y = "PC2", title = "Eileen's Danish Stat Summary")
+```
