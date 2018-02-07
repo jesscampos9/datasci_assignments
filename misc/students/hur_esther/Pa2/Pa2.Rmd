@@ -4,9 +4,9 @@ author: "Esther Hur"
 date: "Last update: 2018-01-29 18:20:58"
 output: 
   html_document: 
-  highlight: kate
-  keep_md: yes
-  theme: united
+    highlight: kate
+    keep_md: yes
+    theme: united
 ---
 
 ```{r setup, include=FALSE}
