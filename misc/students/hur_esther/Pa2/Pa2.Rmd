@@ -9,7 +9,7 @@ keep_md: yes
 theme: united
 ---
 
- ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 ---
@@ -25,7 +25,7 @@ str(danish)
 str(dativeSimplified)
 str(spanishFunctionWords)
 str(english)
-
+```
 
 # Inside your pa2.Rmd file you will generate 3 different plots using
 # ggplot2. You must use 3 of the aforementioned datasets (a different
@@ -38,22 +38,24 @@ str(english)
 
 
 # 1st plot
+```{r}
 ggplot(data = danish, aes(x = LogCUP, y = LogWordFreq)) +
     geom_point() +
     labs(x = 'LogCUP', y = 'Word Frequency', 
          title = 'Danish boxplot')
 
-
+```
 # 2nd plot
+```{r}
 ggplot(data = dativeSimplified, aes(x = AnimacyOfRec, y = LengthOfTheme, fill = AnimacyOfRec)) + 
   geom_boxplot()
   labs(x = 'AnimacyOfRec', y = 'LengthOfTheme', title= 'My boxplot')
-  
+```  
 
 # 3rd plot
+```{r}
 ggplot(data = english, aes(x = RTnaming, y = WrittenFrequency)) +
   stat_summary(fun.data = mean_cl_boot, geom = 'pointrange') + 
   facet_wrap(~ AgeSubject) +
   labs(x = 'RTnaming', y = 'WrittenFrequency', title= 'English')
-  
-```
+```  
