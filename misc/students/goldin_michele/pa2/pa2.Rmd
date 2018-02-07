@@ -9,7 +9,7 @@ output:
     theme: united
 ---
 
-##Plot 1
+## Plot 1
 
 ```{r}
 library(languageR)
@@ -24,7 +24,7 @@ caption = "Log Frequency as a function of Word"
 
 ```
 
-##Plot2
+## Plot2
 
 ```{r}
 english %>%
@@ -36,7 +36,7 @@ caption = "My Boxplot"
 ```
 
 
-##Plot3
+##P lot3
 
 ```{r}
 danish %>%

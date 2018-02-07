@@ -9,7 +9,7 @@ output:
     theme: united
 ---
 
-##Plot 1
+## Plot 1
 
 
 ```r
@@ -18,20 +18,20 @@ library(tidyverse)
 ```
 
 ```
-## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──
+## -- Attaching packages ---------------------------------- tidyverse 1.2.1 --
 ```
 
 ```
-## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
-## ✔ tibble  1.3.4     ✔ dplyr   0.7.4
-## ✔ tidyr   0.7.2     ✔ stringr 1.2.0
-## ✔ readr   1.1.1     ✔ forcats 0.2.0
+## <U+221A> ggplot2 2.2.1.9000     <U+221A> purrr   0.2.4     
+## <U+221A> tibble  1.4.2          <U+221A> dplyr   0.7.4     
+## <U+221A> tidyr   0.8.0          <U+221A> stringr 1.2.0     
+## <U+221A> readr   1.1.1          <U+221A> forcats 0.2.0
 ```
 
 ```
-## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
+## -- Conflicts ------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
 ```
 
 ```r
@@ -48,7 +48,7 @@ beginningReaders %>%
 caption = "Log Frequency as a function of Word"
 ```
 
-##Plot2
+## Plot2
 
 
 ```r
@@ -65,7 +65,7 @@ caption = "My Boxplot"
 ```
 
 
-##Plot3
+##P lot3
 
 
 ```r
