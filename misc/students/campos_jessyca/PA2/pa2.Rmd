@@ -9,14 +9,14 @@ output:
     theme: united
 ---
 
-```r
+```{r}
 library(tidyverse)
 library(languageR)
 ```
 
 1. A bivariate scatterplot
 
-```r
+```{r}
 beginningReaders %>%
    ggplot(., aes(x = ProportionOfErrors, y = OrthLength, color = ReadingScore)) +
       geom_point() +
@@ -26,7 +26,7 @@ beginningReaders %>%
 
 2. A boxplot
 
-```r
+```{r}
 english %>%
   ggplot(., aes(x = AgeSubject,
                 y = WrittenSpokenFrequencyRatio, 
@@ -38,7 +38,7 @@ english %>%
 
 3. A plot that includes a stat_summary and a facet
 
-```r
+```{r}
 danish %>%
   ggplot(., aes(x = LogRT, y = LogCUP, color = Sex)) +
   facet_grid(. ~ PrevError) + 
@@ -47,5 +47,7 @@ danish %>%
   labs(x = 'Reaction Time', y = 'Log CUP') +
   ggtitle('This is a Graph')
 ```
+
+
 
 
