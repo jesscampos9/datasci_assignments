@@ -1,0 +1,59 @@
+---
+title: "Programming assignment 2"
+author: "Nate Koser"
+date: "Last update: 2018-01-29 18:20:58"
+output: 
+  html_document:
+    highlight: kate
+    keep_md: yes
+    theme: united
+---
+
+#bivariate scatterplot 
+
+```{r}
+library(knitr)
+library(tidyverse)
+library(languageR)
+ggplot(data = english) +
+  geom_point(mapping= aes(x = WrittenFrequency, y = Familiarity)) +
+  labs(x = "Word Written Frequency (CELEX database)", 
+       y = "Subjective Familiarity Rating",
+       title = "Familiarity and Frequency")
+```
+
+#boxplot with different fill colors
+
+```{r}
+library(knitr)
+library(tidyverse)
+library(languageR)
+str(danish)
+ggplot(data = danish) +
+  geom_boxplot(mapping= aes(x = Sex, y = LogRT, fill = Sex)) +
+  labs(x = "Gender", 
+       y = "Response Time",
+       title = "Response Times by Gender",
+       fill = "Gender")
+```
+
+#stat_summary / facet plot
+
+```{r}
+library(knitr)
+library(tidyverse)
+library(languageR)
+ggplot(data = beginningReaders) + 
+  stat_summary(
+    mapping = aes(x = ReadingScore, y = LogRT),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median,
+    geom = "pointrange"
+  ) +
+  facet_wrap(~ OrthLength)+
+  labs(x = "Reading Proficiency Score",
+       y = "Reaction Time",
+       title = "Reaction Time and Reading Proficiency 
+       for Words of Length 2~11")
+```
