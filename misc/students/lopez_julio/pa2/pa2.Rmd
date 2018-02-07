@@ -1,0 +1,58 @@
+---
+title: "Programming assignment 2"
+author: "Julio Lopez"
+date: "Last update: 2018-02-06 20:05:58"
+output:
+  html_document:
+    highlight: kate
+    keep_md: yes
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+```{r}
+library(languageR)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+
+str(beginningReaders)
+str(danish)
+str(english)
+str(dativeSimplified)
+str(spanishFunctionWords)
+
+
+# Inside your pa2.Rmd file you will generate 3 different plots using
+# ggplot2. You must use 3 of the aforementioned datasets (a different
+# dataset for each plot). All plots must include informative x-, y-axis
+# labels and a title. The plots you must create are:
+#
+# A bivariate scatterplot
+# A boxplot with different fill colors
+# A plot of your choice that includes a stat_summary and a facet.
+
+# 1st Plot
+ggplot(data = danish, aes(x = LogRT, y = LogWordFreq)) +
+  geom_point() +
+  labs(x = 'Reaction Time', y = 'Word Frequency', 
+       title = 'Reaction Time as a function of Word Frequency')
+
+
+# 2nd Plot
+ggplot(data = dativeSimplified, aes(x = AnimacyOfTheme, y = LengthOfTheme, fill = AnimacyOfTheme)) +
+  geom_boxplot() +
+  labs(x = 'Animacy of Theme', y = 'Lenght of Theme', 
+       title = 'Length of Theme as a function of Animacy of Theme')
+
+# 3rd Plot
+ggplot(data = beginningReaders, aes(x = LogRT, y = OrthLength)) +
+    stat_summary(fun.data = mean_cl_boot, geom = 'pointrange') +
+    facet_wrap(~ ReadingScore, nrow = 3) +
+    labs(x = 'LogRT', y = 'OrthLength', 
+       title = 'LogRT as a function of OrthLength')
+```
