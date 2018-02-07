@@ -1,0 +1,33 @@
+---
+title: "Programming Assignment 2"
+author: "Dine Mamadou"
+date: "2/6/2018"
+output: 
+  html_document:
+    highlight: kate
+    keep_md: yes
+    theme: united
+---
+
+```{r setup, include=TRUE}
+library(tidyverse)
+library(languageR)
+
+english %>%
+  ggplot(mapping =  aes(x = ConffV, y = ConffN), color = ConffN) +
+  geom_point() +
+  geom_smooth(se = TRUE)
+
+beginningReaders %>%
+  select(., Subject, LogRT) %>%
+  ggplot(., aes(x = Subject, y = LogRT, fill = Subject)) +
+  geom_boxplot()
+
+dativeSimplified %>%
+  ggplot(., aes(x = AnimacyOfTheme, y = LengthOfTheme, color = AnimacyOfRec)) +
+    geom_boxplot() +
+    facet_grid(. ~ AnimacyOfRec) +
+    geom_boxplot()+
+    stat_summary(fun.data = mean_cl_boot) 
+```
+
