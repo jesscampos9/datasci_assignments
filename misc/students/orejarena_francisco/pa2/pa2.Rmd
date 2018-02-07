@@ -1,0 +1,42 @@
+---
+title: "Programming assignment 2"
+author: "Francisco Orejarena"
+date: "February 4, 2018"
+output: 
+  html_document:
+    highlight: kate
+    keep_md: yes
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r danish}
+library(languageR)
+library(tidyverse)
+
+ggplot(data = danish, aes(x = ResidSemRating, y = LogWordFreq)) + geom_point()
+```
+
+```{r dativeSimplified}
+library(languageR)
+library(tidyverse)
+
+ggplot(data = dativeSimplified, aes(x = AnimacyOfRec, y = LengthOfTheme, color = AnimacyOfTheme)) + 
+  geom_boxplot()
+```
+
+```{r spanishFunctionWords}
+library(languageR)
+library(tidyverse)
+
+beginningReaders %>%
+  select(., PC1, PC2, PC3, PC4, LogFamilySize, ProportionOfErrors) %>%
+  gather(., key = person, val = value, -ProportionOfErrors, -LogFamilySize) %>%
+  ggplot(., aes(x = LogFamilySize, y = ProportionOfErrors)) +
+  stat_summary(fun.y = mean, geom="line") +
+  facet_grid(. ~ person) +
+    geom_point()
+```  
