@@ -1,0 +1,57 @@
+---
+title: "Programming Assignment 2"
+author: "Ana Bennett"
+date: "Last update: 2018-02-05 19:21:34"
+output: 
+  html_document:
+    highlight: kate
+    keep_md: yes 
+    theme: united 
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Practice graphing with ggplot
+
+
+```{r}
+library(tidyverse)
+library(languageR)
+
+#scatterplot 
+#plot indicates perhaps scatterplot is not best representation of these variables? 
+beginningReaders %>%
+  select(., ReadingScore, LogRT, ProportionOfErrors)%>%
+  filter(., ReadingScore >= 50)%>%
+  ggplot(., aes(x = ReadingScore, y = LogRT, color = ProportionOfErrors))+
+  geom_point()+
+  labs(y = "Reaction Time (ms)", x = "Reading Proficiency", title = "Reaction Times and Reading Profieciency Of Dutch Speaking Children") 
+
+#boxplot
+english %>%
+  select(., AgeSubject, RTlexdec) %>%
+  ggplot(., aes(x = AgeSubject, y= RTlexdec, fill = AgeSubject)) +
+  geom_boxplot() +
+  labs(y = "Reaction Time", x = "Age", title = "Lexical Decision Latency in English Speakers")
+
+#scatterplot with stat summary and facet 
+dativeSimplified %>%
+  select(., RealizationOfRec, LengthOfTheme, AnimacyOfRec, AnimacyOfTheme)%>%
+  ggplot(., aes(x = as.factor(RealizationOfRec), y = LengthOfTheme)) +
+  stat_summary(fun.y = mean, geom = "point", size = 4, color = 'orange') +
+  geom_point(stat = 'identity') +
+  facet_grid(. ~ AnimacyOfTheme)+
+  labs(y = "Number of Words Per Theme", x = "Dative Classification", title = "Dative Realization as NP or PP") +
+  theme_bw()
+  
+
+
+
+
+
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
