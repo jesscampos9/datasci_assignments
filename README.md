@@ -5,6 +5,7 @@ Programming assignments for Data Science for Linguistics.
 
 -   [pa1](#assignment-1)
 -   [pa2](#assignment-2)
+-   [pa3](#assignment-3)
 
 ------------------------------------------------------------------------
 
@@ -140,11 +141,11 @@ Assignment 2
 
 **Topics**: RMarkdown, ggplot
 
+### Overview
+
 In this assignment you will practice the basics of using .Rmd files to
 create dynamic, reproducible reports in .docx, .pdf, or .html format.
 Moreover, you will show your data visualization skills using `ggplot2`.
-
-### Overview
 
 **Assigned**: Week 3  
 **Due**: Tuesday, 2/6 before 10pm
@@ -160,28 +161,24 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 3.  Create an RMarkdown file called `pa2.Rmd`.
 4.  Use the following information for the **yaml front matter**:
 
-<!-- -->
+    title: "Programming assignment 2"  
+    author: "Your name"  
+    date: "Last update: 2018-02-12 22:38:06"  
+    output:  
+     html\_document:  
+     highlight: kate  
+     keep\_md: yes  
+     theme: united
 
-    ---
-    title: "Programming assignment 2"
-    author: "Your name"
-    date: "Last update: 2018-01-29 18:20:58"
-    output: 
-      html_document: 
-        highlight: kate
-        keep_md: yes
-        theme: united
-    ---
-
-1.  Install and load the `languageR` package.
-2.  Familiarize yourself with three of the following five datasets:
+5.  Install and load the `languageR` package.
+6.  Familiarize yourself with three of the following five datasets:
     -   **beginningReaders**
     -   **danish**
     -   **dativeSimplified**
     -   **english**
     -   **spanishFunctionWords**
 
-3.  Inside your `pa2.Rmd` file you will generate 3 different plots using
+7.  Inside your `pa2.Rmd` file you will generate 3 different plots using
     `ggplot2`. You must use 3 of the aforementioned datasets (a
     different dataset for each plot). All plots must include informative
     x-, y-axis labels and a title. The plots you must create are:
@@ -190,7 +187,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
     3.  A plot of your choice that includes a `stat_summary` and a
         facet.  
 
-4.  Commit the changes in your dropbox to your upstream branch. Check
+8.  Commit the changes in your dropbox to your upstream branch. Check
     your repo on GitHub to make sure it worked (notice anything cool
     when you check the `pa2` folder?), and then submit a pull-request.
     It should include the following...
@@ -200,7 +197,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
 ### Evaluation
 
-This is programming assignment 2 of 4. It is worth 10 of the 50 possible
+This is programming assignment 2 of 4. It is worth 10 of the 40 possible
 points. In order to receive full credit you must complete all the steps
 above and follow all the instructions.
 
@@ -263,5 +260,115 @@ your classmates assignments. You can learn from them and you will notice
 that it is possible to solve data science problems using a variety of
 different methods. That being said, you should only review the work of
 your classmates **after** the assignment has been turned in.
+
+------------------------------------------------------------------------
+
+Assignment 3
+------------
+
+**Topics**: Project management, Tidying data, GitHub Pages
+
+### Overview
+
+In this assignment you will create your own RStudio project in which you
+get, tidy, transform and plot data from publicly available dataset. You
+will host your project in a GitHub repo and create a project website.
+
+**Assigned**: Week 5, 02/13  
+**Due**: Tuesday, 02/20 before 10pm
+
+### Instructions
+
+Choose any dataset you want from the `languageR` package (it can be the
+same one you used last week). To see all the options, run the following
+code in RStudio:
+
+    data(package = "languageR")
+
+#### Setup
+
+1.  Create a new project in RStudio called `pa3`.
+2.  Host your project in a GitHub repo called `pa3`.
+3.  Inside your new project, create an RMarkdown document called
+    `index.Rmd`
+
+#### EDA
+
+1.  Load the dataset of your choice and get information about its
+    structure
+2.  Tidy the dataset (every variable gets a column, every observation
+    occupies a single row), if necessary.
+3.  Calculate descriptive statistics of your choice.
+4.  Select two continuous variables and fit a model to the data
+    (bivariate regression).
+5.  Generate a plot that includes a regression line.
+6.  Write up some general observations (1-2 paragraphs max)
+
+#### Share
+
+1.  Commit your changes and push them to GitHub
+2.  Publish your repo using GitHub Pages
+3.  Create a new folder inside your dropbox in `datasci_assignments`
+    called `pa3`. Include a README.md file with a link to your published
+    pa3 website. Submit a pull request to the master
+    `datasci_assignments` repo.
+
+### Evaluation
+
+This is programming assignment 3 of 4. It is worth 10 of the 40 possible
+points. In order to receive full credit you must complete all steps in
+**Setup**, **EDA**, and **Share** detailed above, and follow **all** the
+instructions. Moreover, steps 1-5 in *EDA* **must** be completed in
+separate code chunks, and you must comment every step in your code.
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Task</th>
+<th align="right">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tidy data</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Descriptive stats</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="odd">
+<td align="left">Plot data</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Fit bivariate regression</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Publish to GitHub Pages</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">Successfully submit pull request</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Total</strong></td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table>
+
+### Tips
+
+-   Review the RStudio Projects tutorial to refresh your memory.
+-   Review the recommended readings for tips on tidying your data.
+-   Only submit a pull request to `datasci_assignments` once everything
+    is working properly in your repo.
+-   Always include a README in your repos.
+-   Make sure you **look** at the output after kniting. Is it clean?
+    Make it look good (i.e., don't type everything in bold!).
+-   **Use slack to ask questions**
 
 ------------------------------------------------------------------------
