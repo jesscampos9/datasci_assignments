@@ -1,0 +1,66 @@
+---
+title: "Programming Assignment 3"
+author: "Jessyca Campos"
+date: "2/20/2018"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 
+## Load the dataset
+
+```{r, message=FALSE}
+# make sure to load all the packages necessary
+# especially tidyverse
+library(tidyverse)
+library(languageR)
+str(ratings)
+
+```
+
+## Tidy the dataset
+
+This data set is tidy; every variable is in a column and every observation occupies a single row.
+
+## Descriptive Stats
+
+```{r}
+# this function gives the correlation coefficient for meanFamiliarity and Frequency 
+cor(ratings$meanFamiliarity, ratings$Frequency)
+```
+  
+## Plot
+
+```{r}
+
+my_data <- ratings %>%
+  select(., x = meanFamiliarity, y = Frequency)
+
+my_data %>%
+  ggplot(., mapping = aes(x = x, y = y)) +
+  labs(x = "meanFamiliarity", y = "Frequency") +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_linedraw() +
+  ggtitle("Relationship between meanFamiliarity and Frequency")
+
+```
+
+## Model
+
+```{r}
+ratings_fit <- lm(y ~ x, data = my_data)
+summary(ratings_fit)
+
+hist(residuals(ratings_fit))
+qqnorm(residuals(ratings_fit))
+
+```
+
+## General Observations
+
+The model suggests that there is a positive correlation between meanFamiliarity and frequency. As meanFamiliarity increases frequency increases.
