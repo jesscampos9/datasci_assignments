@@ -6,6 +6,7 @@ Programming assignments for Data Science for Linguistics.
 -   [pa1](#assignment-1)
 -   [pa2](#assignment-2)
 -   [pa3](#assignment-3)
+-   [pa4](#assignment-4)
 
 ------------------------------------------------------------------------
 
@@ -163,7 +164,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
     title: "Programming assignment 2"  
     author: "Your name"  
-    date: "Last update: 2018-02-12 22:38:06"  
+    date: "Last update: 2018-02-25 13:30:16"  
     output:  
      html\_document:  
      highlight: kate  
@@ -370,5 +371,115 @@ separate code chunks, and you must comment every step in your code.
 -   Make sure you **look** at the output after kniting. Is it clean?
     Make it look good (i.e., don't type everything in bold!).
 -   **Use slack to ask questions**
+
+------------------------------------------------------------------------
+
+Assignment 4
+------------
+
+**Topics**: Project management, tidying data, HTML Presentations
+
+### Overview
+
+In this assignment you will create an RStudio project in which you get,
+tidy, transform, analyze and plot data from a publicly available
+dataset. You will host your project in a GitHub repo and create HTML
+slides to present your analysis.
+
+**Assigned**: 02/27  
+**Due**: Tuesday, 03/06 before 10pm
+
+### Instructions
+
+1.  Create a new project in RStudio called `pa4`. Inside your new
+    project, create three folders: `data_raw`, `data_clean`, and
+    `slides`.
+2.  Download the dataset available
+    [here](https://github.com/jvcasillas/datasci_assignments/raw/master/misc/data/pa_4_data/fricatives.zip)
+    and store it in `data_raw`.
+3.  Generate an HTML presentation using your choice of **ioslides** or
+    **xaringan**. Save the RMarkdown file as `index.Rmd` inside of the
+    folder `slides`.
+4.  Load the dataset from your `index.Rmd` file.
+5.  Tidy the data.
+6.  Provide a table of descriptive statistics.
+7.  Make a boxplot of center of gravity as a function of phoneme. In
+    another slide, plot skewness as a function of phoneme. Use a
+    statistical transformation (i.e., not a boxplot).
+8.  Fit a model that examines center of gravity as a function of
+    skewness for the [s] segments (hint: you will have to transform the
+    data). Make a table of the model summary.
+9.  Make a scatter plot that illustrates the relationship in (8).
+10. Check model diagnostics. Make plots.
+11. Write up the results (as if it were for a journal article).
+12. Host your project in a GitHub repo called `pa4`.
+13. Turn the slides into a website using GitHub pages.
+14. Inside your dropbox in `datasci_assignments`, create a folder called
+    `pa4` that includes a `README.md` file with a link to your slides.
+15. Push changes to your version of `datasci_assignments` and submit a
+    pull request.
+
+### Evaluation
+
+This is programming assignment 4 of 4. It is worth 10 of the 40 possible
+points. In order to receive full credit you must complete steps 1-15
+above and follow **all** the instructions.
+
+<table>
+<thead>
+<tr class="header">
+<th align="left">Task</th>
+<th align="right">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Tidy data</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Descriptive stats</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="odd">
+<td align="left">Plot data</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Fit a model</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Assess and interpret model</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">Publish HTML slides using GitHub Pages</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Successfully submit pull request</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Total</strong></td>
+<td align="right">10</td>
+</tr>
+</tbody>
+</table>
+
+### Tips
+
+-   Follow every instruction step-by-step.
+-   Worry about tidying your data, fitting your models, making plots,
+    etc., **before** you worry about making the presentation (i.e.,
+    making each individual slide). It might be a good idea to use an R
+    script first, as we have done in class.
+-   Search for help when you get stuck, use stackoverflow and slack.
+-   Think of this PA as a practice exam. Use all of the skills you have
+    developed up to this point in the class.
+-   Review fetching changes in GitHub (to update your
+    **datasci\_assignments** repo) and submitting pull-requests (to
+    'turn in' your assignment).
 
 ------------------------------------------------------------------------
