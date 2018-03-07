@@ -1,2 +1,2 @@
 # pa4
-https://eileenblum.github.io/pa4/slides/#1
+https://eileenblum.github.io/pa4/
