@@ -1,0 +1,129 @@
+
+Call:
+lm(formula = cog ~ abs(skewness), data = fric_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2156.0  -784.0  -337.0   907.9  2609.7 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     4403.0      397.9  11.066  1.9e-13 ***
+abs(skewness)    651.1      522.1   1.247     0.22    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1167 on 38 degrees of freedom
+Multiple R-squared:  0.03932,	Adjusted R-squared:  0.01404 
+F-statistic: 1.555 on 1 and 38 DF,  p-value: 0.22
+
+
+Call:
+lm(formula = cog ~ abs(skewness), data = fric_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2156.0  -784.0  -337.0   907.9  2609.7 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     4403.0      397.9  11.066  1.9e-13 ***
+abs(skewness)    651.1      522.1   1.247     0.22    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1167 on 38 degrees of freedom
+Multiple R-squared:  0.03932,	Adjusted R-squared:  0.01404 
+F-statistic: 1.555 on 1 and 38 DF,  p-value: 0.22
+
+
+Call:
+lm(formula = cog ~ abs(skewness), data = fric_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2156.0  -784.0  -337.0   907.9  2609.7 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     4403.0      397.9  11.066  1.9e-13 ***
+abs(skewness)    651.1      522.1   1.247     0.22    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1167 on 38 degrees of freedom
+Multiple R-squared:  0.03932,	Adjusted R-squared:  0.01404 
+F-statistic: 1.555 on 1 and 38 DF,  p-value: 0.22
+
+
+Call:
+lm(formula = cog ~ abs(skewness), data = fric_tidy)
+
+Residuals:
+    Min      1Q  Median      3Q 
+-2156.0  -784.0  -337.0   907.9 
+    Max 
+ 2609.7 
+
+Coefficients:
+              Estimate Std. Error
+(Intercept)     4403.0      397.9
+abs(skewness)    651.1      522.1
+              t value Pr(>|t|)    
+(Intercept)    11.066  1.9e-13 ***
+abs(skewness)   1.247     0.22    
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’
+  0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1167 on 38 degrees of freedom
+Multiple R-squared:  0.03932,	Adjusted R-squared:  0.01404 
+F-statistic: 1.555 on 1 and 38 DF,  p-value: 0.22
+
+
+Call:
+lm(formula = cog ~ (skewness), data = fric_tidy)
+
+Residuals:
+     Min       1Q   Median 
+-2509.70  -618.71    -2.63 
+      3Q      Max 
+  838.32  2243.07 
+
+Coefficients:
+            Estimate Std. Error
+(Intercept)   4783.1      177.8
+skewness      -544.5      233.3
+            t value Pr(>|t|)    
+(Intercept)  26.895   <2e-16 ***
+skewness     -2.333    0.025 *  
+---
+Signif. codes:  
+  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’
+  0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1113 on 38 degrees of freedom
+Multiple R-squared:  0.1253,	Adjusted R-squared:  0.1023 
+F-statistic: 5.445 on 1 and 38 DF,  p-value: 0.02502
+
+
+Call:
+lm(formula = cog ~ skewness, data = fric_tidy)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2509.70  -618.71    -2.63   838.32  2243.07 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   4783.1      177.8  26.895   <2e-16 ***
+skewness      -544.5      233.3  -2.333    0.025 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1113 on 38 degrees of freedom
+Multiple R-squared:  0.1253,	Adjusted R-squared:  0.1023 
+F-statistic: 5.445 on 1 and 38 DF,  p-value: 0.02502
+
+Error in View : object 's_data' not found

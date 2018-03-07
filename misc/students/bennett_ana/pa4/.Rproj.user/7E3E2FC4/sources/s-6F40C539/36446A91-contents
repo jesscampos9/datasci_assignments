@@ -1,0 +1,76 @@
+---
+title: "Regression"
+author: "Ana Bennett"
+date: "Last updated:`r Sys.Date()`"
+output: 
+  html_document: 
+    highlight: kate
+    theme: spacelab
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Awesome Regression Example 
+
+#Simple Text
+This is a simple bivariate regression example.
+Two plus two equals `r 2 + 2`.
+
+```{r, my_setup, echo = TRUE, message = FALSE}
+library(languageR)
+library(tidyverse)
+str(spanish)
+```
+
+## Tiddy some data
+
+Here we tiddy the data
+
+```{r, my_plot, fig.align= 'center', fig.width= 10, fig.height = 5}
+my_data <- spanish %>%
+  select(., x = X14461gll, y = X14473gll) %>%
+  filter(., y < 0.06, x < 0.075) 
+
+my_data %>%
+  ggplot(., aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = 'lm')
+```
+
+## Model
+
+Here we fit a model 
+
+```{r}
+my_fit <- lm(y ~ x, data = my_data)
+summary(my_fit)
+```
+
+Data were analzying using a confidence interval. (Slope: `r coefficients(my_fit)[2]` , CI: LB: `r round(confint(my_fit)[1, c(1,2)],3)`)
+
+```{r}
+coefficients(my_fit)
+```
+```{r}
+resid(my_fit)
+```
+
+#test normality of residulas
+hist(residuals(modelName))
+qqnorm(residuals(modelName))
+qqline(residuals(modelName))
+
+```{r}
+hist(residuals(my_fit))
+qqnorm(residuals(my_fit))
+qqline(residuals(my_fit))
+```
+
+
+
+
+
+
+
+

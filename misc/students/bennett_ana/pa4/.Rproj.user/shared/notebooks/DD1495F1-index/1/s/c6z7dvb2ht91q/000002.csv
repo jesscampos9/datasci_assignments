@@ -1,0 +1,24 @@
+"0","devtools::install_github(""yihui/xaringan"")
+"
+"2","* installing *source* package ‘xaringan’ ...
+"
+"2","** R
+"
+"2","** inst
+"
+"2","** tests
+"
+"2","** preparing package for lazy loading
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","** building package indices
+"
+"2","** installing vignettes
+"
+"2","** testing if installed package can be loaded
+"
+"2","* DONE (xaringan)
+"

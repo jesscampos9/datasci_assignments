@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520363195685.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AF8A2B57",
+    "lastKnownWriteTime" : 4294967302,
+    "last_content_update" : 1520363195685,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "65B6E263",
+        "caption" : "fric_tidy",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=fric_tidy&cache_key=65B6E263",
+        "displayedObservations" : "40",
+        "environment" : "",
+        "object" : "fric_tidy",
+        "preview" : "0",
+        "totalObservations" : "40",
+        "variables" : "4"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

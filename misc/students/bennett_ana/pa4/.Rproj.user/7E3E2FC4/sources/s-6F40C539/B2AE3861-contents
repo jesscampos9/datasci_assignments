@@ -1,0 +1,7 @@
+## Boxplot
+
+fric_data%>%
+  select(., cog, phoneme)%>%
+  ggplot(., aes(x = phoneme, y = cog))+
+  geom_boxplot()
+```
