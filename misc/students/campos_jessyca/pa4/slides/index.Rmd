@@ -1,0 +1,168 @@
+---
+title: "Programming Assignment 4"
+subtitle: 
+author: "Jessyca Campos"
+date: "March 6, 2018"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Load the dataset
+
+```{r, load_data, message=FALSE}
+
+library(tidyverse)
+my_data <- read.csv('../data_raw/fricatives/fricatives.csv')
+str(my_data)
+head(my_data)
+
+```
+
+---
+
+# Tidy the dataset
+
+```{r, tidy_data }
+tidydata <- my_data %>%
+  gather(., measurement, value, -obs) %>%
+  separate(., measurement, into = c('phoneme', 'measure'), sep = '_') %>%
+  spread(., key = measure, value = value)
+  head(tidydata)
+```
+
+---
+
+# Descriptive stats
+
+```{r, stats }
+tidydata %>% 
+  group_by(., phoneme) %>% 
+  summarize(., mean_cog = mean(cog),
+               sd_cog = sd(cog), 
+               mean_skewness = mean(skewness),
+               sd_skewness = sd(skewness)) %>%
+  knitr::kable(., format = 'html', digits = 2)
+```
+
+---
+
+# Boxplot: center of gravity ~ phoneme
+
+```{r, boxplot, fig.width=8, echo=FALSE}
+tidydata %>%
+  ggplot(., aes(x = phoneme, y = cog, fill = phoneme)) +
+  geom_boxplot(width = 0.4)
+```
+
+---
+
+# Plot: skewness ~ phoneme
+
+```{r, plot, fig.width=8, echo=FALSE}
+tidydata %>%
+  ggplot(., aes(x = phoneme, y = skewness)) +
+  stat_summary(fun.data = mean_cl_boot, 
+               geom = 'pointrange', shape = 1)
+```
+
+---
+
+# Model: center of gravity ~ skewness for [s]
+
+```{r, model}
+s_fit <- tidydata %>%
+  filter(., phoneme == 's')
+
+tidydata_fit <- lm(skewness ~ cog, data = s_fit)
+summary(tidydata_fit)
+```
+
+---
+
+# Model summary table
+
+```{r, }
+
+broom::tidy(tidydata_fit) %>%
+  knitr::kable(., format = 'html', digits = 2)
+```
+
+---
+
+# Scatterplot: center of gravity ~ skewness
+
+```{r, scatterplot, fig.width=8, echo=FALSE}
+tidydata_fit %>%
+  ggplot(., aes (x = skewness, y = cog)) + 
+  geom_point() + 
+  geom_smooth(method = lm)
+```
+
+---
+
+# Model diagnostics
+---
+
+# Check if association is linear
+```{r, mod_diagnostics1, fig.width=8}
+tidydata %>%
+  ggplot(., aes(x = skewness, y = cog), fill = phoneme) +
+  geom_point()
+
+```
+
+---
+
+# Check if the mean of the residuals is zero
+
+``` {r, }
+mean(tidydata_fit$residuals)
+summary(tidydata_fit)
+```
+
+---
+# Check correlation of residuals
+
+```{r, fig.align=8}
+lmtest::dwtest(tidydata_fit)
+```
+
+---
+```{r, resid_cont}
+acf(tidydata_fit$residuals)
+```
+
+---
+
+# Results
+
+The data was analyzed using a linear model to assess the relationship between the skewness and the center of gravity of two fricatives [s] and [ʃ]. The model showed a positive linear relationship between center of gravity (cog) and skewness for the [s]. The model showed that the association between predictors was linear. The mean of the residuals was zero. Correlation of the residuals indicated a p-value less than 0.01 which suggests that it is significant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
