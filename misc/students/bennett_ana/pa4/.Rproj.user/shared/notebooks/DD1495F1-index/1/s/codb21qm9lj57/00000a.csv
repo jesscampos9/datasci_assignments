@@ -1,5 +1,0 @@
-"0","fric_data <- read.csv(""fricatives.csv"")
-"
-"2","cannot open file 'fricatives.csv': No such file or directory"
-"2","Error in file(file, ""rt"") : cannot open the connection
-"
