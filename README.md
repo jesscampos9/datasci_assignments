@@ -165,7 +165,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
     title: "Programming assignment 2"  
     author: "Your name"  
-    date: "Last update: 2018-04-03 09:43:52"  
+    date: "Last update: 2018-04-03 09:45:01"  
     output:  
      html\_document:  
      highlight: kate  
@@ -531,7 +531,8 @@ sum, you want to know if proficiency scores vary as a function of age
 2.  Create a new project in RStudio called `pa5`. Inside your new
     project, create two folders: `data_raw` and `data_clean`.
 3.  Download the dataset available [here](pa5_learning) and store the
-    entire folder in `data_raw`.
+    entire folder in `data_raw`.  
+    <https://github.com/jvcasillas/datasci_assignments/raw/master/misc/data/pa_5_data/pa_5_data.zip>
 4.  Create a new RMarkdown file called `index.Rmd` and save it at the
     root level of your project (i.e., inside `pa5`). In the yaml front
     matter make sure to give your document an informative title, to
