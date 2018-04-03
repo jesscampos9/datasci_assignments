@@ -165,7 +165,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
     title: "Programming assignment 2"  
     author: "Your name"  
-    date: "Last update: 2018-04-02 22:41:32"  
+    date: "Last update: 2018-04-03 09:43:52"  
     output:  
      html\_document:  
      highlight: kate  
