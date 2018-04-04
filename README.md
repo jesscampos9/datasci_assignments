@@ -165,7 +165,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
     title: "Programming assignment 2"  
     author: "Your name"  
-    date: "Last update: 2018-04-03 09:45:01"  
+    date: "Last update: 2018-04-03 10:20:18"  
     output:  
      html\_document:  
      highlight: kate  
@@ -567,7 +567,7 @@ sum, you want to know if proficiency scores vary as a function of age
     statistical analyses you have done in one paragraph, and the actual
     results in another. Don't forget to include an overall assessment of
     goodness of fit (variance explained).
-13. Once you have finished steps 1-11, make sure your documents will
+13. Once you have finished steps 1-12, make sure your documents will
     knit successfully. Host your project in a private GitHub repo (call
     it `pa5`), and share it with me (jvcasillas). You do not need to
     make it a website.
@@ -623,7 +623,7 @@ above and follow **all** the instructions.
 <td align="right">1.0</td>
 </tr>
 <tr class="odd">
-<td align="left">Test two-interaction and main effects</td>
+<td align="left">Test two-way interaction and main effects</td>
 <td align="right">1.0</td>
 </tr>
 <tr class="even">
