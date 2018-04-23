@@ -1,0 +1,11 @@
+"0","data %>%
+  filter(., group == ""m"") %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(yintercept = 0.5, color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = """")
+"
+"2","Ignoring unknown parameters: yintercept"

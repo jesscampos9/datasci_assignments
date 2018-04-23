@@ -1,0 +1,333 @@
+---
+title: "The use of DOM in Spanish among Romanian-speaking L2 learners"
+subtitle: "⚔<br/>with xaringan"
+author: "Julio Cesar Lopez Otero"
+date: "2018/04/24"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+### I examine the use of Differential Object Marking (DOM) in Spanish (coded as 0 or 1) among Romanian-speaking L2 learners (a language that also has DOM) and Spanish monolinguals. 
+### In this project, I specifically look at the L2 learners' production in contexts in which the DOM systems of the two languages diverge and how their production is related to information from their language background questionnaires.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(lme4)
+```
+
+```{r, include=FALSE}
+dataset <- read_csv("./data/P_SP.csv")
+head(dataset)
+```
+
+```{r, include=FALSE}
+data <- dataset %>%
+  filter(., do == "AGC")
+head(data)
+
+data %>%
+  filter(., group == "m") %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = "")
+
+datab <- data %>%
+  filter(., group == "b")
+datab3 <- datab %>%
+  filter(., item != "spAGCInan4") %>%
+  filter(., item != "spAGCInan5")
+```
+---
+### First context: Agentivity Constraint (Torrego, 1998)
+```{r, echo=FALSE}
+data %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = "") +
+  facet_grid(~ group)
+```
+---
+Fit a null model
+```{r, 'mod_null', echo=FALSE}
+mod_null <- glm(response ~ 1, data = datab)
+summary(mod_null)
+```
+---
+Add a categorical predictor: MiNT 
+```{r, 'mod_mint', echo=FALSE}
+mod_mint <- glm(response ~ mintsp, data = datab)
+summary(mod_mint)
+```
+---
+Add a categorical predictor: education
+```{r, 'mod_education', echo=FALSE}
+mod_education <- glm(response ~ education, data = datab)
+summary(mod_education)
+```
+---
+Add a categorical predictor: Spanish spoken daily
+```{r, 'mod_spday', echo=FALSE}
+mod_spday <- glm(response ~ spday, data = datab)
+summary(mod_spday)
+```
+---
+Add a categorical predictor: Romanian spoken daily
+```{r, 'mod_roday', echo=FALSE}
+mod_roday <- glm(response ~ roday, data = datab)
+summary(mod_roday)
+```
+---
+Add a categorical predictor: years of residence in Spain
+```{r, 'mod_residence', echo=FALSE}
+mod_residence <- glm(response ~ residence, data = datab)
+summary(mod_residence)
+```
+---
+Best model for Agentivity Constraint (5 items)
+```{r, 'bestmodelAGC', echo=FALSE}
+anova(mod_null, mod_mint, mod_education, mod_spday, mod_roday, mod_residence)
+```
+---
+# Agentivity Constraint without item effects
+```{r, echo=FALSE}
+data %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = "") +
+  facet_grid(~ group)
+```
+---
+Fit a null model
+```{r, 'mod_null3', echo=FALSE}
+mod_null3 <- glm(response ~ 1, data = datab3)
+summary(mod_null3)
+```
+---
+Add a categorical predictor: MiNT SIGNIFICANT
+```{r, 'mod_mint3', echo=FALSE}
+mod_mint3 <- glm(response ~ mintsp, data = datab3)
+summary(mod_mint3)
+```
+---
+Add a categorical predictor: education
+```{r, 'mod_education3', echo=FALSE}
+mod_education3 <- glm(response ~ education, data = datab3)
+summary(mod_education3)
+```
+---
+Add a categorical predictor: Spanish spoken daily
+```{r, 'mod_spday3', echo=FALSE}
+mod_spday3 <- glm(response ~ spday, data = datab3)
+summary(mod_spday3)
+```
+---
+Add a categorical predictor: Romanian spoken daily
+```{r, 'mod_roday3', echo=FALSE}
+mod_roday3 <- glm(response ~ roday, data = datab3)
+summary(mod_roday3)
+```
+---
+Add a categorical predictor: years of residence in Spain
+```{r, 'mod_residence3', echo=FALSE}
+mod_residence3 <- glm(response ~ residence, data = datab3)
+summary(mod_residence3)
+```
+---
+Best model for Agentivity Constraint (3 items)
+```{r, 'bestmodelAGC3', echo=FALSE}
+anova(mod_null3, mod_mint3, mod_education3, mod_spday3, mod_roday3, mod_residence3)
+```
+---
+Best model for Agentivity Constraint (3 items)
+```{r, echo=FALSE}
+summary(mod_mint3)
+```
+---
+# Plot: response as a function of MiNT score
+```{r, echo=FALSE}
+datab3 %>%
+  ggplot(., aes(x=mintsp, y=response)) +
+    geom_point() + 
+    geom_smooth(method = lm)
+```
+---
+### Second context: Inanimate demonstrative pronoun DPs
+```{r, include=FALSE}
+dataPron <- dataset %>%
+  filter(., do == "Pron") %>%
+  filter(., animacy == "Inan")
+head(data)
+
+dataPron %>%
+  filter(., group == "m") %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = "")
+
+dataPronb <- dataPron %>%
+  filter(., group == "b")
+head(dataPronb)
+```
+```{r, echo=FALSE}
+dataPron %>%
+  ggplot(., aes(x=item, y=response)) +
+  geom_point(color = 'white', size = 2) + 
+  stat_summary(fun.data = mean_cl_boot, geom = 'pointrange', size = 1, 
+               position = position_dodge(width = 0.5)) + 
+  stat_summary(fun.y = mean, geom = 'point', color = 'blue', size = 3, 
+               position = position_dodge(width = 0.5)) + 
+  scale_shape(name = "") +
+  facet_grid(~ group)
+```
+---
+Fit a null model
+```{r, 'mod_nullP', echo=FALSE}
+mod_nullP <- glm(response ~ 1, data = dataPronb)
+summary(mod_nullP)
+```
+---
+Add a categorical predictor: MiNT 
+```{r, 'mod_mintP', echo=FALSE}
+mod_mintP <- glm(response ~ mintsp, data = dataPronb)
+summary(mod_mintP)
+```
+---
+Add a categorical predictor: education SIGNIFICANT
+```{r, 'mod_educationP', echo=FALSE}
+mod_educationP <- glm(response ~ education, data = dataPronb)
+summary(mod_educationP)
+```
+---
+Add a categorical predictor: Spanish spoken daily
+```{r, 'mod_spdayP', echo=FALSE}
+mod_spdayP <- glm(response ~ spday, data = dataPronb)
+summary(mod_spdayP)
+```
+---
+Add a categorical predictor: Romanian spoken daily SIGNIFICANT
+```{r, 'mod_rodayP', echo=FALSE}
+mod_rodayP <- glm(response ~ roday, data = dataPronb)
+summary(mod_rodayP)
+```
+---
+Add a categorical predictor: years of residence in Spain
+```{r, 'mod_residenceP', echo=FALSE}
+mod_residenceP <- glm(response ~ residence, data = dataPronb)
+summary(mod_residenceP)
+```
+---
+Best model for Inanimate demonstrative pronoun DPs
+```{r, 'bestmodelP', echo=FALSE}
+anova(mod_nullP, mod_mintP, mod_educationP, mod_spdayP, mod_rodayP, mod_residenceP)
+```
+---
+Add a continuous covariate
+```{r, 'mod_educationroday', echo=FALSE}
+mod_educationroday <- glm(response ~ education + roday, data = dataPronb)
+summary(mod_educationroday)
+```
+---
+Add a continuous covariate
+```{r, 'mod_rodayeducation', echo=FALSE}
+mod_rodayeducation <- glm(response ~ roday + education, data = dataPronb)
+summary(mod_rodayeducation)
+```
+---
+Include an interaction term
+```{r, 'mod_educationrodayint', echo=FALSE}
+mod_educationrodayint <- glm(response ~ education * roday, data = dataPronb)
+summary(mod_educationrodayint)
+```
+---
+Include an interaction term
+```{r, 'mod_rodayeducationint', echo=FALSE}
+mod_rodayeducationint <- glm(response ~ roday * education, data = dataPronb)
+summary(mod_rodayeducationint)
+```
+---
+Test main effects and interaction term
+```{r, echo=FALSE}
+anova(mod_nullP, mod_mintP, mod_educationP, mod_spdayP, mod_rodayP, mod_residenceP, mod_educationroday, mod_rodayeducation, mod_educationrodayint, mod_rodayeducationint)
+```
+---
+Best model for response as a function of education and Romanian spoken daily
+```{r, echo=FALSE}
+summary(mod_educationroday)
+```
+---
+### Exploring: Are MiNT scores (significant predictors for DOM response in Agentivity Constraint contexts) correlated to education or Romanian spoken daily (significant predictors for DOM response in Inanimate Demonstrative Pronoun DP contexts)?
+---
+Mint score as a function of education SIGNIFICANT
+```{r, 'mod_mintafaeducation', echo=FALSE}
+mod_mintafaeducation <- glm(mintsp ~ education, data = dataPronb)
+summary(mod_mintafaeducation)
+```
+---
+Mint score as a function of Romanian spoken daily
+```{r, 'mod_mintafaroday', echo=FALSE}
+mod_mintafaroday <- glm(mintsp ~ roday, data = dataPronb)
+summary(mod_mintafaroday)
+```
+---
+Mint score as a function of Spanish spoken daily
+```{r, 'mod_mintafaspday', echo=FALSE}
+mod_mintafaspday <- glm(mintsp ~ spday, data = dataPronb)
+summary(mod_mintafaspday)
+```
+---
+### Plot: the presence of ungrammatical DOM and education are negatively correlated
+```{r, echo=FALSE}
+dataPronb %>%
+  ggplot(., aes(x=education, y=response)) +
+    geom_point() + 
+    geom_smooth(method = lm)
+```
+---
+### Plot: the presence of ungrammatical DOM and the amount of Romanian spoken day are positively correlated
+```{r, echo=FALSE}
+dataPronb %>%
+  ggplot(., aes(x=roday, y=response)) +
+    geom_point() + 
+    geom_smooth(method = lm)
+```
+---
+### Plot: the presence of ungrammatical DOM and the amount of Romanian spoken day are positively correlated in all education groups
+```{r, echo=FALSE}
+dataPronb %>%
+  ggplot(., aes(x=roday, y=response)) +
+    geom_point() + 
+    geom_smooth(method = lm) +
+    facet_wrap(~ education, nrow = 2)
+```
+---
+# Conclusion: 
+### Mint scores are a significant predictor in the presence of DOM in Agentivity Constraint contexts.
+### Education level is a significant predictor in the presence of DOM in Inanimate Demonstrative Pronoun DP contexts.
+### The amount of Romanian (but not Spanish) spoken daily is a significant predictor in the presence of DOM in Inanimate Demonstrative Pronoun DP contexts.
+### Mint scores and education level are positively correlated.
