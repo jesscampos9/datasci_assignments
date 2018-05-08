@@ -1,0 +1,20 @@
+"0","dataset <- read_csv(""./data/P_SP.csv"")
+"
+"2","Parsed with column specification:
+cols(
+  participant = col_character(),
+  group = col_character(),
+  mintsp = col_integer(),
+  language = col_character(),
+  do = col_character(),
+  animacy = col_character(),
+  item = col_character(),
+  expected = col_integer(),
+  response = col_integer(),
+  education = col_integer(),
+  spday = col_integer(),
+  roday = col_integer(),
+  residence = col_integer()
+)
+"
+"0","head(dataset)"
