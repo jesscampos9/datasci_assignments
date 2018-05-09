@@ -1,7 +1,31 @@
 datasci\_assignments
 ====================
 
+Final projects
+--------------
+
+-   [Ana: Training effects on vowel duration in L2
+    English](https://github.com/anarinzler/final_project)
+-   [Eileen: Stress in Munster
+    Irish](https://github.com/eileenblum/mim3)
+-   [Jessyca: Cue weighting in L2 stress
+    perception](https://github.com/jesscampos9/research_project)
+-   [Dine: Acoustics of
+    Shouting](https://github.com/dinemamadou/Final_project)
+-   [Michele: Acquisition of null
+    subjects](https://github.com/michelegoldin/research_project)
+-   [Esther: Verb Frequency and DOM in Heritage Speakers of
+    Spanish](https://github.com/estherhur/Final-paper)
+-   [Nate: Drunk driving in Korea](https://github.com/nate-koser/Final)
+-   [Julio: The use of DOM in Spanish among Romanian-speaking L2
+    learners](https://github.com/julioclo/finalproject)
+-   [Chris: Acoustic Correlates of Stress in
+    Lithuanian](https://github.com/coakden/Final-Project)
+-   [Francisco: Disproving the Functional Load Hypothesis with Stronger
+    Data Analysis](https://github.com/BatFran/Research-Project)
+
 Programming assignments for Data Science for Linguistics.
+---------------------------------------------------------
 
 -   [pa1](#assignment-1)
 -   [pa2](#assignment-2)
@@ -165,7 +189,7 @@ Moreover, you will show your data visualization skills using `ggplot2`.
 
     title: "Programming assignment 2"  
     author: "Your name"  
-    date: "Last update: 2018-04-03 10:20:18"  
+    date: "Last update: 2018-05-09 12:27:17"  
     output:  
      html\_document:  
      highlight: kate  
